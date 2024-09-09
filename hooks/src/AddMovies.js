@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
 
-const AddMovies = ({addNewmovies}) => {
+const AddMovies = ({addNewMovie}) => {
     const [input, setInput] = useState({
         title: '',
         description: '',
         posterURL: '',
-        rating: ''
+        rating: 1
       });
     
       const handleChange = (e) => {
@@ -17,7 +17,7 @@ const AddMovies = ({addNewmovies}) => {
       };
     
       const handleAddMovie = () => {
-        addNewmovies(input);
+        addNewMovie(input);
         setInput({
           title: '',
           description: '',

@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import StarRatingComponent from 'react-star-rating-component';
 
 const Movie = ({ movie }) => {
   return (
@@ -12,7 +13,16 @@ const Movie = ({ movie }) => {
           <Card.Text style={{ height: '20rem' }}>
             {movie.description}
           </Card.Text>
-          <Button variant="primary">{`Rating: ${movie.rating}`}</Button>
+          <div className="rating-stars" style={{ marginBottom: '10px' }}>
+            <StarRatingComponent
+              name={`movie-rating-${movie.title}`} 
+              starCount={5} 
+              value={parseFloat(movie.rating)} 
+              editing={false}
+            />
+          </div>
+          
+          {/* <Button variant="primary">{`Rating: ${movie.rating}`}</Button> */}
         </Card.Body>
       </Card>
     </div>
